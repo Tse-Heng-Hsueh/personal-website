@@ -1,0 +1,546 @@
+/*網頁全體使用Oswald字體, 且背景使用淺粉色（rgb(247, 238, 245)）*/
+html {
+  font-family: "Oswald", sans-serif;
+  background-color: rgb(247, 238, 245);
+}
+
+/*下列與.navBar相關設計為全體網頁上方的選單bar, 包含hover效果 和 視窗縮小後bar收斂效果*/
+.navBar {
+  overflow: hidden;
+  background-color: rgb(119, 37, 131);
+  position: sticky;
+  top: 1%;
+  width: 100%;
+}
+
+.navBar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 8px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navBar a:hover {
+  background-color: rgb(29, 34, 72);
+  color: white;
+}
+
+.navBar a.active {
+  background-color: rgb(232, 211, 162);
+  color: rgb(119, 37, 131);
+  float: left;
+}
+
+.navBar a.current {
+  background-color: rgb(29, 34, 72);
+}
+
+.navBar .icon {
+  display: none;
+}
+
+/*首頁自我介紹的區塊設計, 透過break-word自動換行*/
+.div1 {
+  width: 98%;
+  height: auto;
+  word-wrap: break-word;
+  display: flex;
+  padding: 30px;
+}
+
+/*自我介紹的文字排版*/
+.selfIntro {
+  padding: 50px;
+  padding-top: 60px;
+}
+
+/*首頁工作區塊設計*/
+.work {
+  background-color: rgb(29, 34, 72);
+  color: white;
+  padding: 60px;
+  display: flex;
+}
+
+/*以下與.workGrid相關為工作區塊隨著視窗大小變化所改變排版的樣式，在＠media區塊從一排三個區塊開始遞減*/
+.workGrid {
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 50px;
+}
+
+.workGrid div {
+  height: 100px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+/*為工作區塊公司的名稱設計*/
+.workBrand {
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+/*為工作區塊工作內容的設計*/
+.workPosition {
+  text-decoration: underline;
+}
+
+/*首頁教育區塊排版設計*/
+.education {
+  margin-top: 10px;
+  padding: 60px;
+  background-color: rgb(232, 211, 162);
+  display: flex;
+}
+
+/*首頁教育區塊及工作區塊標頭設計*/
+.educationworkTitle {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+/*首頁教育區塊學校名稱設計*/
+.educationContent {
+  padding-bottom: 20px;
+  padding-left: 70px;
+  text-decoration: underline;
+}
+
+/*首頁教育區塊學歷內容設計*/
+.educationParagraph {
+  padding-left: 100px;
+}
+
+/*首頁自我介紹區塊大頭貼設計*/
+.profile {
+  height: 200px;
+  width: 200px;
+  padding: 30px 30px 30px 30px;
+  border-radius: 50%;
+}
+
+/*首頁教育區塊上各校logo區塊排版*/
+.logoSection {
+  padding-left: 125px;
+}
+
+/*首頁教育區塊上各校logo設計*/
+.logo1,
+.logo2,
+.logo3 {
+  height: 200px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+/*首頁隨視窗大小改變包括工作區域grid的陳列及改變學校lgog區塊顯示數量，另外也包括導覽列由文字收斂成hamburger menu*/
+@media screen and (max-width: 1420px) {
+  .workGrid {
+    width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logoSection {
+    padding-left: 0px;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .logo3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .logo2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .workGrid {
+    width: 400px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .logo1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navBar a {
+    float: right;
+  }
+  .navBar a:not(:first-child) {
+    display: none;
+  }
+  .navBar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navBar.responsive {
+    position: sticky;
+  }
+  .navBar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navBar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .div1 {
+    display: block;
+  }
+
+  .pro {
+    text-align: center;
+  }
+
+  .educationContent,
+  .educationParagraph {
+    padding-left: 0px;
+  }
+}
+
+/*網頁最下方email圖示連結設計, 以及hover效果*/
+
+.contact {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.9;
+}
+
+.contact:hover {
+  opacity: 1;
+}
+
+/*各分頁標題設計, ex. 進入各分頁 Article, Experience, Contact 等字樣的呈現*/
+.titleWord {
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 50px;
+}
+
+/*聯絡頁內文文字設計*/
+.contactDetail {
+  padding-left: 30px;
+}
+
+/*聯絡頁表單排版設計*/
+.formContainer {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgb(29, 34, 72, 0.3);
+  padding: 25px;
+  border-radius: 4px;
+}
+
+/*聯絡頁內各填入框的排版設計*/
+input[type="text"],
+input[type="email"],
+input[type="subject"] {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  border: 2px solid rgb(232, 211, 162, 0.3);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/*聯絡頁表單文字區塊設計*/
+textarea {
+  width: 100%;
+  border: 2px solid rgb(232, 211, 162, 0.3);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/*聯絡頁表單內送出按鈕設計, 以及hover效果*/
+button[type="submit"] {
+  background-color: rgb(119, 37, 131, 0.3);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(232, 211, 162, 0.5);
+}
+
+/*聯絡頁表單內意見回覆區塊設計*/
+#formMess {
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  border: 2px solid rgb(232, 211, 162, 0.3);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/*經驗頁區塊標題（License, Volunteer）設計*/
+.expBox {
+  font-size: 25px;
+  width: 280px;
+  height: 30px;
+  padding-left: 3px;
+  margin-top: 10px;
+  margin-left: 50px;
+  padding-bottom: 5px;
+  background-color: rgb(119, 37, 131);
+  color: white;
+}
+
+/*.gridContain相關為經驗頁各經驗呈現區塊格紋設計，初始設定一排4格，將透過＠media設定改變視窗大小效果，一排呈現格數遞減，並有RWD效果*/
+.gridContain {
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+.gridContain div {
+  border: black solid 1px;
+  height: 100px;
+  text-align: center;
+}
+
+.gridContain span {
+  opacity: 0;
+}
+
+/*經驗頁各經驗區塊作品hover所呈現的效果，像是圖片透明度及大小改變，以及說明文字的跳出*/
+#SQLHover:hover,
+#PythonHover:hover,
+#TableauHover:hover,
+#WebScrapHover:hover,
+#ToeflHover:hover,
+#GREHover:hover,
+#CORHover:hover,
+#ZAHover:hover,
+#MINHover:hover {
+  opacity: 0.7;
+  transform: scale(0.8);
+}
+
+#SQLContain:hover span,
+#PythonContain:hover span,
+#TableauContain:hover span,
+#WebScrapContain:hover span,
+#ToeflContain:hover span,
+#GREContain:hover span,
+#CORContain:hover span,
+#ZAContain:hover span,
+#MINContain:hover span {
+  opacity: 1;
+}
+
+/*經驗頁各經驗所呈現的格數隨視窗大小改變*/
+@media (max-width: 1200px) {
+  .gridContain {
+    width: 900px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .gridContain {
+    width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gridContain {
+    width: 300px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*.projectGrid為作品頁格數呈現初始設定，以一排三格為最初呈現，並透過＠media設定改變視窗大小效果，一排呈現格數遞減，並有RWD效果*/
+.projectGrid {
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 40px;
+}
+
+.projectGrid div {
+  border: black solid 1px;
+  height: 250px;
+  text-align: center;
+}
+
+.projectGrid img:hover {
+  opacity: 0.6;
+}
+@media (max-width: 1200px) {
+  .projectGrid {
+    width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .projectGrid {
+    width: 400px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*文章頁將區塊置中設計*/
+.articleCenter {
+  text-align: center;
+}
+
+/*文章頁文章標題設計*/
+.articleTitle {
+  font-size: 25px;
+}
+
+/*文章頁圖片排版設計*/
+.articleIMG {
+  width: 550px;
+  height: 250px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*文章頁文章內容區塊置中*/
+.articleContain {
+  display: flex;
+  justify-content: center;
+}
+
+/*文章頁文章區塊內文區塊寬度設計*/
+.articleParagraph {
+  width: 750px;
+}
+
+/*文章頁文章區塊內文文字呈現設計*/
+.articleIndexParagraph {
+  width: 550px;
+  padding-bottom: 60px;
+}
+
+/*文章頁文章區塊內 read more 前 ... 設計*/
+.dots {
+  color: rgb(119, 37, 131);
+  font-weight: bolder;
+}
+
+/*文章頁閱讀更多按鈕設計, 包括hover效果*/
+.readmoreButton {
+  background-color: rgb(119, 37, 131);
+  color: white;
+  cursor: pointer;
+  width: 80px;
+  border-radius: 15%;
+}
+.readmoreButton:hover {
+  background-color: rgb(232, 211, 162);
+  color: rgb(119, 37, 131);
+  width: 80px;
+}
+
+/*.pageIndex相關為文章頁面下方導覽列設計，包括目前所在頁面的區別以及hover時呈現的不同效果*/
+.pageIndex {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.pageIndex a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.pageIndex a:hover {
+  color: rgb(119, 37, 131);
+  background-color: rgb(232, 211, 162);
+}
+
+.pageIndex a.current {
+  color: white;
+  background-color: rgb(119, 37, 131);
+}
+
+/*.pageNav相關為文章頁詳細內文切換到上下文章設計的導覽設計*/
+.pageNavBar {
+  width: 550px;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 2px solid rgb(211, 211, 211);
+  display: flex;
+}
+
+.pageNavLeft {
+  width: 275px;
+}
+.pageNavRight {
+  width: 275px;
+  direction: rtl;
+}
+
+.pageNavButton {
+  border: none;
+  padding: 0px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.pageNavButton:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/*文章頁詳細內文下方意見欄位設計*/
+.comment {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 550px;
+  border: 1px solid rgb(211, 211, 211);
+}

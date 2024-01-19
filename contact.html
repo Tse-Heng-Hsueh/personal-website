@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tyler's Contact</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="navBar" id="myNavBar">
+        <a href="https://tylertyler.web.fc2.com" class="active"><img
+          src="https://i.imgur.com/gYRjsTg.png"
+          height="20px"
+          width="25px"
+          style="padding-right: 8px"
+        />Tyler's Blog</a>
+        <a href="https://tylertyler.web.fc2.com" >Home</a>
+        <a href="https://tylertyler.web.fc2.com/article1.html">Article</a>
+        <a href="https://tylertyler.web.fc2.com/project.html">Project</a>
+        <a href="https://tylertyler.web.fc2.com/experience.html">Experience</a>
+        <a href="https://drive.google.com/file/d/1d6D2noYi1Z2EEpPUpOfMEEGPKS8IR5C1/view?usp=sharing"
+        target="_blank">Resume</a>
+        <a href="https://tylertyler.web.fc2.com/contact.html" class="current">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"
+          ><img src="https://i.imgur.com/B83GbLs.png" height="18px" width="18px"
+        /></a>
+      </div>
+      <div class="titleWord">Contact</div>
+      <div class="contactDetail">If you have any opinion, you can contact me via Contact-Form below, Email(<a href="mailto:tylerxue0325@gmail.com">tylerxue0325@gmail.com</a>) or <a href="https://www.linkedin.com/in/tse-heng-hsueh-tyler-xue-1a877916a" target="_blank">Linkedin</a>.</div>
+      <div class="formContainer">
+        <form action="https://formsubmit.co/tylerxue0325@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://tylertyler.web.fc2.com/">
+          <input type="hidden" name="_subject" value="New submission!">
+          <label for="formName">Name</label>
+          <input type="text" id="formName" name="name" placeholder="Please type your name..." required />
+          <label for="formEmail">Email</label>
+          <input type="email" name="email" id="formEmail" placeholder="Please type your email..." required />
+          <label for="formSubject">Subject</label>
+          <input type="subject" name="subject" id="formSubject" placeholder="Please enter subject..." required />
+          <label for="formMess">Message (Optional)</label>
+          <textarea id="formMess" name="Message" rows="4" cols="50" placeholder="Please enter your opinion..."></textarea>
+          <button type="submit">Send</button>
+        </form>
+        
+      </div>
+      <div class="articleContain">
+        <a href="mailto:tylerxue0325@gmail.com" target="_blank">
+          <img class="contact" style="width: 25px; height: 25px; margin-top: 22px;" , src="https://i.imgur.com/TRuB43v.png" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tse-heng-hsueh-tyler-xue-1a877916a"
+          target="_blank"
+        >
+          <img class="contact" , src="https://i.imgur.com/s0XLUjt.png" />
+        </a>
+      </div>
+
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myNavBar");
+        if (x.className === "navBar") {
+          x.className += " responsive";
+        } else {
+          x.className = "navBar";
+        }
+      }
+    </script>
+  </body>
+</html>
